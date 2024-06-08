@@ -1,11 +1,11 @@
 const express = require('express');
 const cors = require("cors");
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 
 const router = require("./core/router/router");
 const connectDataBase = require("./core/common/connectDataBase");
 
-const { MONGO_CONNECTION_STRING, PORT } = dotenv.config().parsed;
+const { MONGO_CONNECTION_STRING, PORT } = dotenv.parsed;
 
 const server = express();
 server.use(express.json());
