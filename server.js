@@ -10,7 +10,10 @@ const { MONGO_CONNECTION_STRING, PORT } = dotenv.config().parsed;
 const server = express();
 server.use(express.json());
 
-server.use(cors());
+server.use(cors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+}));
 
 server.use('/api', router);
 
