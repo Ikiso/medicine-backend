@@ -21,7 +21,6 @@ services:
       - "5000:5000"
     depends_on:
       - mongo
-    network_mode: host
 
 volumes:
   mongo_data:
